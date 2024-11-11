@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.mvn.MainTest">
+      <class name="com.modules.WidgetsSelectMenu">
         <methods>
-          <include name="beforeTest"/>
-          <include name="dataPickerDetails"/>
-          <include name="loadBrowser"/>
+          <include name="clickElement"/>
         </methods>
-      </class> <!-- com.mvn.MainTest -->
+      </class> <!-- com.modules.WidgetsSelectMenu -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

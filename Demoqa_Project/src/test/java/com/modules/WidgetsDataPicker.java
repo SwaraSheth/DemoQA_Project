@@ -16,6 +16,7 @@ public class WidgetsDataPicker {
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		 WebElement element=driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[4]/div/div[1]"));
 		 js.executeScript("arguments[0].scrollIntoView();", element);
+		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[4]/div/div[3]")).click();
 		 Thread.sleep(2000);
 		 js.executeScript("window.scrollBy(0,400)");

@@ -13,6 +13,7 @@ public class FormPractise {
 		JavascriptExecutor js= (JavascriptExecutor) driver;
 		 WebElement element=driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]/div/div[3]"));
 		 js.executeScript("arguments[0].scrollIntoView();", element);
+		 Thread.sleep(2000);
 		 driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div[2]/div/div[3]")).click();
 		 driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[1]/div/div/div[2]/div")).click();
 		 js.executeScript("window.scrollBy(0,500)");

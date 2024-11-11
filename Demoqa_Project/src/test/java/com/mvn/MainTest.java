@@ -26,6 +26,12 @@ import com.modules.FormPractise;
 import com.modules.WidgetsAccordian;
 import com.modules.WidgetsAutoComplete;
 import com.modules.WidgetsDataPicker;
+import com.modules.WidgetsMenu;
+import com.modules.WidgetsProgressbar;
+import com.modules.WidgetsSelectMenu;
+import com.modules.WidgetsSlider;
+import com.modules.WidgetsTabs;
+import com.modules.WidgetsToolTips;
 
 
 public class MainTest {
@@ -50,6 +56,12 @@ WebDriver driver=null;
 	WidgetsAccordian wa=null;
 	WidgetsAutoComplete wac=null;
 	WidgetsDataPicker wdp=null;
+	WidgetsSlider ws=null;
+	WidgetsProgressbar wp=null;
+	WidgetsTabs wt=null;
+	WidgetsToolTips wtt=null;
+	WidgetsMenu wm=null;
+	WidgetsSelectMenu wsm=null;
 	
 	
 @BeforeClass
@@ -81,6 +93,13 @@ public void beforeTest() {
 	wa=new WidgetsAccordian();
 	wac=new WidgetsAutoComplete();
 	wdp=new WidgetsDataPicker();
+	ws=new WidgetsSlider();
+	wp=new WidgetsProgressbar();
+	wt=new WidgetsTabs();
+	wtt=new WidgetsToolTips();
+	wm=new WidgetsMenu();
+	wsm=new WidgetsSelectMenu();
+	
 }
 
 @Ignore
@@ -205,12 +224,56 @@ public void autoCompleteDetails() throws InterruptedException {
 	wac.singleColorname(driver);
 }
 
-@Test(priority = 15)
+@Ignore
+@Test(priority = 16)
 public void dataPickerDetails() throws InterruptedException {
 	wdp.clickElement(driver);
 	wdp.selectDate(driver);
 	wdp.selectDateNTime(driver);
 	
+}
+
+@Ignore
+@Test(priority = 17)
+public void sliderDetails() throws Exception {
+	ws.clickElement(driver);
+	ws.slider(driver);
+	
+}
+
+@Ignore
+@Test(priority = 18)
+public void progressbarDetails() throws Exception {
+	wp.clickElement(driver);
+	wp.ProgressBar(driver);
+}
+	
+@Ignore
+@Test(priority = 19)
+public void tabDetails() throws Exception {
+	wt.clickElement(driver);
+	wt.clickTabs(driver);
+}
+
+@Ignore
+@Test(priority = 20)
+public void toolTipsDetails() throws Exception {
+	wtt.clickElement(driver);
+	wtt.hoverOver(driver);
+}
+
+@Ignore
+@Test(priority = 21)
+public void menuDetails() throws Exception {
+	wm.clickElement(driver);
+	wm.menuItems(driver);
+}
+
+
+@Test(priority = 21)
+public void selectMenuDetails() throws Exception {
+	wsm.clickElement(driver);
+	wsm.select(driver);
 }
 
 
