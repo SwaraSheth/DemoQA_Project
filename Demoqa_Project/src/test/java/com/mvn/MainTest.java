@@ -24,6 +24,7 @@ import com.modules.ElementTextBox;
 import com.modules.ElementUploadDownload;
 import com.modules.ElementWebTable;
 import com.modules.FormPractise;
+import com.modules.InteractionsDragabble;
 import com.modules.InteractionsDroppable;
 import com.modules.InteractionsResizable;
 import com.modules.InteractionsSelectable;
@@ -72,6 +73,7 @@ WebDriver driver=null;
 	InteractionsSelectable islect=null;
 	InteractionsResizable iresize=null;
 	InteractionsDroppable idrop=null;
+	InteractionsDragabble idrag=null;
 	
 @BeforeClass
 	public void loadBrowser() throws InterruptedException
@@ -113,6 +115,7 @@ public void beforeTest() {
 	islect=new InteractionsSelectable();
 	iresize=new InteractionsResizable();
 	idrop=new InteractionsDroppable();
+	idrag=new InteractionsDragabble();
 	
 }
 
@@ -316,15 +319,25 @@ public void resizeableDetails() throws Exception {
 	iresize.boxCorner2(driver);
 }
 
-
-
-@Test(priority = 25)
+@Ignore
+@Test(priority = 26)
 public void droppableDetails() throws Exception {
 	idrop.clickElement(driver);
 	idrop.simpleDrop(driver);
 	idrop.accepDrop(driver);
 	idrop.preventDrop(driver);
 	idrop.revertDrop(driver);
+
+}
+
+@Ignore
+@Test(priority = 27)
+public void dragabbleDetails() throws Exception {
+	idrag.clickElement(driver);
+	idrag.simpleDrag(driver);
+	idrag.axixRestrictedDrag(driver);
+	idrag.containerRestrictedDrag(driver);
+	idrag.cursorStyleDrag(driver);
 
 }
 
