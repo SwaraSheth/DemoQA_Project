@@ -2,6 +2,7 @@ package com.mvn;
 import org.apache.commons.lang3.ObjectUtils.Null;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ISelect;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
@@ -23,6 +24,10 @@ import com.modules.ElementTextBox;
 import com.modules.ElementUploadDownload;
 import com.modules.ElementWebTable;
 import com.modules.FormPractise;
+import com.modules.InteractionsDroppable;
+import com.modules.InteractionsResizable;
+import com.modules.InteractionsSelectable;
+import com.modules.InteractionsSortable;
 import com.modules.WidgetsAccordian;
 import com.modules.WidgetsAutoComplete;
 import com.modules.WidgetsDataPicker;
@@ -63,6 +68,10 @@ WebDriver driver=null;
 	WidgetsMenu wm=null;
 	WidgetsSelectMenu wsm=null;
 	
+	InteractionsSortable isort=null;
+	InteractionsSelectable islect=null;
+	InteractionsResizable iresize=null;
+	InteractionsDroppable idrop=null;
 	
 @BeforeClass
 	public void loadBrowser() throws InterruptedException
@@ -99,6 +108,11 @@ public void beforeTest() {
 	wtt=new WidgetsToolTips();
 	wm=new WidgetsMenu();
 	wsm=new WidgetsSelectMenu();
+	
+	isort=new InteractionsSortable();
+	islect=new InteractionsSelectable();
+	iresize=new InteractionsResizable();
+	idrop=new InteractionsDroppable();
 	
 }
 
@@ -269,13 +283,50 @@ public void menuDetails() throws Exception {
 	wm.menuItems(driver);
 }
 
-
-@Test(priority = 21)
+@Ignore
+@Test(priority = 22)
 public void selectMenuDetails() throws Exception {
 	wsm.clickElement(driver);
 	wsm.select(driver);
 }
 
+@Ignore
+@Test(priority = 23)
+public void sortableDetails() throws Exception {
+	isort.clickElement(driver);
+	isort.sortableList(driver);
+	isort.sortableGrid(driver);
+	
+}
+
+@Ignore
+@Test(priority = 24)
+public void selectableDetails() throws Exception {
+	islect.clickElement(driver);
+	islect.selectableList(driver);
+	islect.selectableGrid(driver);
+	
+}
+
+@Ignore
+@Test(priority = 25)
+public void resizeableDetails() throws Exception {
+	iresize.clickElement(driver);
+	iresize.boxCorner1(driver);
+	iresize.boxCorner2(driver);
+}
+
+
+
+@Test(priority = 25)
+public void droppableDetails() throws Exception {
+	idrop.clickElement(driver);
+	idrop.simpleDrop(driver);
+	idrop.accepDrop(driver);
+	idrop.preventDrop(driver);
+	idrop.revertDrop(driver);
+
+}
 
 //@Ignore
 //@AfterClass

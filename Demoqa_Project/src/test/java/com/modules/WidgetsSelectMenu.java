@@ -26,6 +26,7 @@ public class WidgetsSelectMenu {
 		 Thread.sleep(3000);
 	}
 	
+	@Test(priority = 2)
 	public void select(WebDriver driver) throws InterruptedException {
 		
 		driver.findElement(By.xpath("//*[@id=\"withOptGroup\"]/div/div[2]")).click();
