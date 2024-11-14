@@ -14,6 +14,7 @@ import com.modules.AFWAlerts;
 import com.modules.AFWBrowserWindows;
 import com.modules.AFWFrames;
 import com.modules.AFWModalDiologs;
+import com.modules.BSALogin;
 import com.modules.ElementBrokenLinks;
 import com.modules.ElementButtons;
 import com.modules.ElementCheckBox;
@@ -75,6 +76,9 @@ WebDriver driver=null;
 	InteractionsDroppable idrop=null;
 	InteractionsDragabble idrag=null;
 	
+	BSALogin bsa=null;
+	
+	
 @BeforeClass
 	public void loadBrowser() throws InterruptedException
 	{
@@ -116,6 +120,8 @@ public void beforeTest() {
 	iresize=new InteractionsResizable();
 	idrop=new InteractionsDroppable();
 	idrag=new InteractionsDragabble();
+	
+	bsa=new BSALogin();
 	
 }
 
@@ -330,7 +336,7 @@ public void droppableDetails() throws Exception {
 
 }
 
-@Ignore
+//@Ignore
 @Test(priority = 27)
 public void dragabbleDetails() throws Exception {
 	idrag.clickElement(driver);
@@ -341,11 +347,22 @@ public void dragabbleDetails() throws Exception {
 
 }
 
+@Ignore
+@Test(priority = 28)
+public void bsaDetails() throws Exception {
+	bsa.clickElement(driver);
+	bsa.clickLogin(driver);
+	bsa.newUserRegi(driver);
+	bsa.backtoLogin(driver);
+	bsa.clickLogin(driver);
+
+}
+
 //@Ignore
-//@AfterClass
-//public void closeBrowser() throws InterruptedException
-//{
-//	Thread.sleep(3000);
-//	driver.close();		
-//}
+@AfterClass
+public void closeBrowser() throws InterruptedException
+{
+	Thread.sleep(3000);
+	driver.close();		
+}
 }

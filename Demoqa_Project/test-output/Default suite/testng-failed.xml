@@ -5,9 +5,15 @@
     <classes>
       <class name="com.mvn.MainTest">
         <methods>
+          <include name="linksDetails"/>
           <include name="beforeTest"/>
-          <include name="dragabbleDetails"/>
+          <include name="radioButtonDetails"/>
+          <include name="textBoxDetails"/>
+          <include name="closeBrowser"/>
+          <include name="buttonsDetails"/>
           <include name="loadBrowser"/>
+          <include name="webtableDetails"/>
+          <include name="checkboxDetails"/>
         </methods>
       </class> <!-- com.mvn.MainTest -->
     </classes>
